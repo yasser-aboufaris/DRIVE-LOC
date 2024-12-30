@@ -1,0 +1,31 @@
+<?php
+
+
+class Connection
+{
+    public $conn; 
+    private $serverName = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $database = "carShop";
+
+    public function __construct()
+    {
+
+        try {
+            $this->conn = new PDO("mysql:host=$this->serverName;dbname=$this->database", $this->username, $this->password);
+
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo"maratvalidich";
+
+        } 
+        catch(PDOException $e) {
+            echo "error";
+        }
+
+        
+
+    }
+    
+}
+$conn = new Connection();
