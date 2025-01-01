@@ -18,7 +18,7 @@ class Reservation {
         try {
             return $stmt->execute();
         } catch (PDOException $e) {
-           
+        
             echo "Error: " . $e->getMessage();
             return false;
         }
@@ -28,7 +28,7 @@ class Reservation {
         if (!is_numeric($id)) {
             throw new InvalidArgumentException("Invalid reservation ID");
         }
-
+    
         $query = "UPDATE reservation SET status = 'accepted' WHERE id = :id";
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(":id", $id);
@@ -40,5 +40,14 @@ class Reservation {
             echo "Error: " . $e->getMessage();
             return false;
         }
+    }
+
+                            
+    public function read(){
+        $qry="select * from reservation";
+        $stmt = $this->pdo->prepare($qry);
+        $stmt->execute();
+        $result = $stmt->fetchColumn();
+        
     }
 }

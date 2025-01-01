@@ -1,12 +1,11 @@
 <?php
-class Login {
+class Authentification {
     private $pdo;
 
 
     public function __construct($pdo) {
         $this->pdo = $pdo;
     }
-
 
     public function login($email, $password) {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
