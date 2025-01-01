@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Stylish Form</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../../src/output.css">
 </head>
 
 <body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center">
     <div class="max-w-lg w-full bg-white shadow-2xl rounded-lg p-8">
-        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-6 tracking-wide">✨ Dynamic Form</h1>
-        <form id="dynamicForm" class="space-y-6 max-w-xl mx-auto">
+        <h1 class="text-4xl font-extrabold text-center text-gray-800  tracking-wide">✨ Dynamic Form </h1>
+        <form action="your_backend_script.php" method="POST" id="dynamicForm" class="space-y-6 max-w-xl mx-auto">
             <!-- Car Model Field -->
             <div>
                 <label for="carModel" class="block text-sm font-medium text-gray-700 mb-1">Car Model</label>
-                <input type="text" id="carModel" name="carModel"
+                <input type="text" id="carModel" name="model"
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 placeholder-gray-400"
                     placeholder="Enter the car model" />
             </div>
@@ -31,27 +31,19 @@
             <!-- Image URL Field -->
             <div>
                 <label for="imageUrl" class="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
-                <input type="url" id="imageUrl" name="imageUrl"
+                <input type="url" id="imageUrl" name="image_url"
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 placeholder-gray-400"
                     placeholder="Enter the image URL" />
             </div>
 
-            <!-- Price Field -->
-            <div>
-                <label for="price" class="block text-sm font-medium text-gray-700 mb-1">Price</label>
-                <input type="number" id="price" name="price"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 placeholder-gray-400"
-                    placeholder="Enter the price" />
-            </div>
-
-            <!-- Car Category Field -->
+            <!-- Category Field -->
             <div>
                 <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
                 <select id="category" name="category"
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300">
-                    <option value="sport">Sport</option>
                     <option value="suv">SUV</option>
-                    <option value="electric">Electric</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="hatchback">Hatchback</option>
                 </select>
             </div>
 
@@ -77,7 +69,6 @@
                 </button>
             </div>
         </form>
-
     </div>
 </body>
 <script src="main.js"></script>

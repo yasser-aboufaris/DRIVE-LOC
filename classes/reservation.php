@@ -7,9 +7,7 @@ class Reservation {
     }
 
     public function delete($id) {
-        if (!is_numeric($id)) {
-            throw new InvalidArgumentException("Invalid reservation ID");
-        }
+    
 
         $query = "DELETE FROM reservation WHERE id = :id";
         $stmt = $this->pdo->prepare($query);
