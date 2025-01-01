@@ -22,6 +22,11 @@ class Reservation {
         }
     }
 
+
+    public function reserve($id_user,$startDay,$end_day,$id_car){
+        $qry="insert into reservation (id_user)";
+    }
+
     public function accept($id) {
         if (!is_numeric($id)) {
             throw new InvalidArgumentException("Invalid reservation ID");

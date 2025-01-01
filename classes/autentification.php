@@ -22,7 +22,6 @@ class Authentification {
                     $_SESSION["user_id"] = $user["id"];
                     $_SESSION["user_name"] = $user["name"];
                     $_SESSION["user_email"] = $email;
-
                     header("Location: ../Vue/index.php");
                     exit;
                 } else {
