@@ -1,10 +1,9 @@
 const dynamicButton = document.getElementById("addField");
-const form = document.getElementById("dynamicForm");
+const form = document.getElementById("adding");
 let fieldNum = 0;
 let i=0;
 function addField() {
     i++;
-    console.log(i);
     const newField = `
     <hr>
     <br>
@@ -59,4 +58,4 @@ function addField() {
 
 }
 
- dynamicButton.addEventListener("click", addField);
+dynamicButton.addEventListener("click", addField);

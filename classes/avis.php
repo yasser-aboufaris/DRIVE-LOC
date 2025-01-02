@@ -23,7 +23,9 @@ class Reservation {
     }
 
 
-                            
+    
+    
+
     public function read(){
         $qry="select * from avis";
         $stmt = $this->pdo->prepare($qry);
