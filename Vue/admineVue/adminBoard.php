@@ -1,3 +1,7 @@
+<?php
+include "../../../classes/cars.php";
+include "../../../classes/conn.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +19,7 @@
             <ul>
                 <li class="mb-4"><a href="#" class="hover:text-gray-400">Dashboard</a></li>
                 <li class="mb-4"><a href="#" class="hover:text-gray-400">Users</a></li>
-                <li class="mb-4"><a href="#" class="hover:text-gray-400">Settings</a></li>
-                <li class="mb-4"><a href="#" class="hover:text-gray-400">Logout</a></li>
-            </ul>
+
         </div>
 
         <!-- Main Content -->
@@ -47,8 +49,4 @@
 
 </body>
 </html>
-<script>
-    let i = <?php
-    $i;
-    ?>
-</script>
+<

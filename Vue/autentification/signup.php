@@ -1,6 +1,4 @@
-<?php session_start();
-include("conn.php");
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,26 +11,24 @@ include("conn.php");
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Sign Up</h2>
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md space-y-6">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Create Your Account</h2>
 
         <form action="#" method="POST">
-            
+            <!-- Full Name Field -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input type="text" id="name" name="name" required
+                    class="mt-2 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    placeholder="Enter your full name">
+            </div>
 
             <!-- Email Field -->
             <div class="mb-4">
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
                 <input type="email" id="email" name="email" required
                     class="mt-2 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="Enter your email">
-            </div>
-
-            <!-- Username Field -->
-            <div class="mb-4">
-                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-                <input type="text" id="username" name="username" required
-                    class="mt-2 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="Choose a username">
+                    placeholder="youremail@example.com">
             </div>
 
             <!-- Password Field -->
@@ -40,7 +36,7 @@ include("conn.php");
                 <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                 <input type="password" id="password" name="password" required
                     class="mt-2 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="Create a password">
+                    placeholder="Create your password">
             </div>
 
             <!-- Confirm Password Field -->
@@ -59,16 +55,10 @@ include("conn.php");
         </form>
 
         <div class="mt-4 text-center">
-            <p class="text-sm text-gray-600">Already have an account? <a href="#"
-                    class="text-indigo-600 hover:text-indigo-800">Login</a></p>
+            <p class="text-sm text-gray-600">Already have an account? <a href="login.html"
+                    class="text-indigo-600 hover:text-indigo-800"><a href="login.php">Log In</a></p>
         </div>
     </div>
-
-
-
-
-
-
 
 </body>
 
