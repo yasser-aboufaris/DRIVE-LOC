@@ -17,11 +17,8 @@
 
         <!-- Main Navigation Links -->
         <ul class="flex space-x-6">
-            <li><a href="#" class="hover:text-blue-400 transition">Home</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition">Vehicles</a></li>
-            <li><a href="#categories" class="hover:text-blue-400 transition">Categories</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition">About</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition">Reserve</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition">cars</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition">Board</a></li>
         </ul>
 
         <!-- Login Button -->
@@ -32,7 +29,7 @@
 <div class="flex flex-wrap gap-3">
 <?php include "../../classes/conn.php"; 
 include "../../classes/cars.php" ;
- foreach ($car->read() as $result): ?>
+foreach ($car->read() as $result): ?>
     <div class="max-w-sm bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl m-4">
         <!-- Image Container with Gradient Overlay -->
         <div class="relative">
