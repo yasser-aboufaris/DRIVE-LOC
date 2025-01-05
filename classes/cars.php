@@ -41,7 +41,7 @@ class Cars {
     public function delete($id) {
         
 
-        $query = "DELETE FROM cars WHERE id = :id";
+        $query = "DELETE FROM cars WHERE id_car = :id";
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(":id", $id);
         

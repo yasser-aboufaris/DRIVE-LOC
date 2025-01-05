@@ -19,10 +19,11 @@ class Categories {
     }
 
     // Insert a new category
-    public function create($id_categorie, $categorieName) {
-        $qry = "INSERT INTO categories (id_categorie, categorieName) VALUES (:id_categorie, :categorieName)";
+    public function create( $categorieName) {
+        $qry = "INSERT INTO categories (
+        categorieName) VALUES ( :categorieName)";
         $stmt = $this->pdo->prepare($qry);
-        $stmt->bindParam(":id_categorie", $id_categorie);
+
         $stmt->bindParam(":categorieName", $categorieName);
         $stmt->execute();
         echo "Category created successfully.";

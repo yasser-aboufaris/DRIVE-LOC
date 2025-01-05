@@ -32,43 +32,48 @@
 <div class="flex flex-wrap gap-3">
 <?php include "../../classes/conn.php"; 
 include "../../classes/cars.php" ;
-foreach ($car->read() as $result) { ?>
+ foreach ($car->read() as $result): ?>
     <div class="max-w-sm bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl m-4">
         <!-- Image Container with Gradient Overlay -->
         <div class="relative">
-            <img class="w-full h-56 object-cover" src="car-image-url.jpg" alt="Car Image">
+            <img class="w-full h-56 object-cover" src="<?php echo htmlspecialchars($result['image_url'] ?? 'car-image-url.jpg'); ?>" alt="<?php echo htmlspecialchars($result['model']); ?>">
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-            <!-- Category Badge -->
-            
         </div>
     
         <!-- Content Container -->
         <div class="p-6 space-y-4">
             <!-- Title with Gradient Text -->
             <h3 class="text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                <?php echo $result['model']; ?>
+                <?php echo htmlspecialchars($result['model']); ?>
             </h3>
     
             <!-- Description -->
             <p class="text-black text-sm leading-relaxed">
-                <?php echo $result['description']; ?>
+                <?php echo htmlspecialchars($result['description']); ?>
             </p>
     
             <!-- Action Buttons -->
             <div class="flex gap-3 pt-4">
-                <button class="flex-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
-                    Edit
-                </button>
-                <button class="flex-1 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
-                    Delete
-                </button>
+                <!-- Edit Button -->
+                <a href="./editCar.php?id=<?php echo htmlspecialchars($result['id_car']); ?>" class="flex-1">
+                    <button class="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
+                        Edit
+                    </button>
+                </a>
+    
+                <!-- Delete Button -->
+                <a href="./deleteCar.php?id=<?php echo$result['id_car']; ?>" class="flex-1" onclick="return confirm('Are you sure you want to delete this car?');">
+                    <button class="w-full bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
+                        Delete
+                    </button>
+                </a>
             </div>
         </div>
     
         <!-- Bottom Accent -->
         <div class="h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
     </div>
-    <?php } ?></div>
+<?php endforeach; ?> ?></div>
     
 
     <footer class="bg-gray-900 text-gray-400 py-6 mt-4">
