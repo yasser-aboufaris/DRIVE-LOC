@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/output.css">
 </head>
 
 <body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
 
     <!-- Background Text (Optional, removed for a more professional look) -->
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-transparent text-6xl font-extrabold bg-clip-text opacity-10">
+    <div class="absol!ute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-transparent text-6xl font-extrabold bg-clip-text opacity-10">
         Rent Your Ride
     </div>
 

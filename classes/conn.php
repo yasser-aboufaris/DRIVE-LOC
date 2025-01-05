@@ -27,3 +27,4 @@ class Connection
     }
     
 }
+$conn = new Connection();

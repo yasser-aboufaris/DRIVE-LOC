@@ -16,6 +16,26 @@ include "../../../classes/conn.php";
     <div class="max-w-lg w-full bg-white shadow-2xl rounded-lg p-8">
         <h1 class="text-4xl font-extrabold text-center text-gray-800 tracking-wide">✨ ADD CARS</h1>
         <form action="your_backend_script.php" method="POST" id="dynamicForm" class="space-y-6 max-w-xl mx-auto">
+        <?php
+            $conn = new Connection();
+            $read = new Categories($conn);
+    
+            ?>
+<div class="relative">
+    <label for="category" class="block text-lg font-semibold text-white mb-2 tracking-wide">Category</label>
+    <select id="category" name="category"
+        class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl shadow-xl focus:outline-none focus:ring-4 focus:ring-indigo-400 focus:border-indigo-600 text-gray-800 bg-gradient-to-r from-indigo-50 via-indigo-100 to-indigo-200 hover:bg-indigo-300 transition duration-300 ease-in-out">
+        <option value="" disabled selected class="text-gray-500">Select a category</option>
+        <?php
+        foreach ($read->read() as $result) {
+            echo '<option value="' . $result['id'] . '">' . $result['categorie'] . '</option>';
+        }
+        ?>
+    </select>
+    <div class="absolute top-0 right-0 bottom-0 left-0 pointer-events-none bg-gradient-to-t from-indigo-600 to-transparent rounded-xl opacity-20"></div>
+</div>
+
+
             <!-- Car Model Field -->
             <div>
                 <label for="carModel" class="block text-sm font-medium text-gray-700 mb-1">Car Model</label>
@@ -41,23 +61,7 @@ include "../../../classes/conn.php";
             </div>
 
             <!-- Category Field -->
-            <?php
-            $conn = new Connection();
-            $read = new Categories($conn);
-    
-            ?>
-            <div>
-                <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
-                <select id="category" name="category"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300">
-                    <?php
-                    print_r($read->read()) ;
-                    foreach ($read->read() as $result) {
-                        echo '<option value="' . $result['id'] . '">' . $result['categorie'] . '</option>';
-                    }
-                    ?>
-                </select>
-            </div>
+        
 
             <div id="adding"></div>
 

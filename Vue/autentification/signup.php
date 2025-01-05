@@ -14,11 +14,11 @@
     <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md space-y-6">
         <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Create Your Account</h2>
 
-        <form action="#" method="POST">
+        <form action="signMethod.php" method="POST">
             <!-- Full Name Field -->
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                <input type="text" id="name" name="name" required
+                <input type="text" id="name" name="userName" required
                     class="mt-2 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                     placeholder="Enter your full name">
             </div>
@@ -55,9 +55,9 @@
         </form>
 
         <div class="mt-4 text-center">
-            <p class="text-sm text-gray-600">Already have an account? <a href="login.html"
-                    class="text-indigo-600 hover:text-indigo-800"><a href="login.php">Log In</a></p>
-        </div>
+    <p class="text-sm text-gray-600">Already have an account? <a href="login.php" class="text-indigo-600 hover:text-indigo-800">Log In</a></p>
+</div>
+
     </div>
 
 </body>
