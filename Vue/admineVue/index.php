@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php include "../../classes/conn.php"; 
+include "../../classes/cars.php" ;
+include "../../classes/categories.php";
+$catergorie = new Categories($conn)
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -19,6 +24,16 @@
         <ul class="flex space-x-6">
             <li><a href="#" class="hover:text-blue-400 transition">cars</a></li>
             <li><a href="#" class="hover:text-blue-400 transition">Board</a></li>
+            <form>
+            <select name="users" onchange="showUser(this.value)" class="bg-gray-800 text-white border border-gray-700 rounded px-3 py-2">
+    <?php
+    foreach($categorie->read() as $row){
+        echo '<option value="'.htmlspecialchars($row['id']).'">'.htmlspecialchars($row['categorie']).'</option>';
+    }
+    ?>
+</select>
+</form>
+
         </ul>
 
         <!-- Login Button -->
@@ -27,9 +42,8 @@
 </nav>
 <!-- <-- /////////////////////////////////////////////////////////////////////// --> 
 <div class="flex flex-wrap gap-3">
-<?php include "../../classes/conn.php"; 
-include "../../classes/cars.php" ;
-foreach ($car->read() as $result): ?>
+<?php 
+foreach ($car->read() as $result){ ?>
     <div class="max-w-sm bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl m-4">
         <!-- Image Container with Gradient Overlay -->
         <div class="relative">
@@ -52,7 +66,7 @@ foreach ($car->read() as $result): ?>
             <!-- Action Buttons -->
             <div class="flex gap-3 pt-4">
                 <!-- Edit Button -->
-                <a href="./editCar.php?id=<?php echo htmlspecialchars($result['id_car']); ?>" class="flex-1">
+                <a href="./editCar.php?id=<?php echo htmlspecialchars(string: $result['id_car']); ?>" class="flex-1">
                     <button class="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
                         Edit
                     </button>
@@ -70,7 +84,7 @@ foreach ($car->read() as $result): ?>
         <!-- Bottom Accent -->
         <div class="h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
     </div>
-<?php endforeach; ?> ?></div>
+<?php };?></div>
     
 
     <footer class="bg-gray-900 text-gray-400 py-6 mt-4">

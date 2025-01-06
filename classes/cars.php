@@ -35,6 +35,37 @@ class Cars {
             }
         }
     
+        public function readCategorie($categorie) {
+            try {
+                // Specify the column name (category) and use proper comparison
+                $qry = "SELECT * FROM cars WHERE categorie = :categorie";
+                
+                $stmt = $this->pdo->prepare($qry);
+                // Bind the parameter with both placeholder and variable
+                $stmt->bindParam(":categorie", $categorie);
+                $stmt->execute();
+                
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            } catch (Exception $th) {
+                throw new Exception("Error jay mn hna: " . $th->getMessage());
+            }
+        }
+        
+        public function readSearch($categorie) {
+            try {
+                // Specify the column name (category) and use proper comparison
+                $qry = "SELECT * FROM cars WHERE model like :model";
+                
+                $stmt = $this->pdo->prepare($qry);
+                // Bind the parameter with both placeholder and variable
+                $stmt->bindParam(":categorie", $categorie);
+                $stmt->execute();
+                
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            } catch (Exception $th) {
+                throw new Exception("Error jay mn hna: " . $th->getMessage());
+            }
+        }
 
 
 
@@ -54,4 +85,3 @@ class Cars {
         }
     }
 }
-$car = new Cars($conn);

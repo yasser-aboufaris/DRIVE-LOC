@@ -29,3 +29,4 @@ class Categories {
         echo "Category created successfully.";
     }
 }
+

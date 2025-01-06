@@ -22,7 +22,7 @@
             Log In to Your Account
         </h2>
 
-        <form action="#" method="POST" class="space-y-5">
+        <form action="./loginMethod.php" method="POST" class="space-y-5">
             <!-- Email Field -->
             <div>
                 <label for="email" class="block text-lg font-medium text-gray-700">Email Address</label>

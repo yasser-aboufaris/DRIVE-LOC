@@ -10,7 +10,7 @@ class Authentification {
     public function login($email, $password) {
         
             try {
-                $qry = "SELECT id, name, password FROM users WHERE email = :email";
+                $qry = "SELECT id_user, name, password FROM users WHERE email = :email";
                 $stmt = $this->pdo->prepare($qry);
                 $stmt->bindParam(":email", $email);
                 $stmt->execute();
